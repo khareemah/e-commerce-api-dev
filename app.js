@@ -13,6 +13,8 @@ const cors = require('cors');
 const mongoSanitize = require('express-mongo-sanitize');
 const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
+// Swagger
+
 const authRouter = require('./routes/authRoutes');
 const userRouter = require('./routes/userRoutes');
 const productRouter = require('./routes/productRoutes');
@@ -43,6 +45,7 @@ app.get('/', (req, res) => {
     res.send('<h1>E-commerce API</h1><a href="/api-docs">Documentation</a>')
   );
 });
+app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
