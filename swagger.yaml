@@ -97,7 +97,7 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-  /user{id}:
+  /user/{id}:
     parameters:
       - in: path
         name: id
