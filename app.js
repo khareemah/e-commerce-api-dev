@@ -40,7 +40,7 @@ app.use(express.static('./public/uploads'));
 app.use(fileUpload());
 app.get('/', (req, res) => {
   res.send(
-    '</h1>E-commerce Documentation</h1><a href="api-docs">Documentation</a>'
+    res.send('<h1>E-commerce API</h1><a href="/api-docs">Documentation</a>')
   );
 });
 app.use('/api/v1/auth', authRouter);
